@@ -1,4 +1,4 @@
-const {
+import {
   GAME_SPEED,
   DIRECTIONS,
   INITIAL_SNAKE_SIZE,
@@ -8,7 +8,8 @@ const {
   DIRECTION_RIGHT,
   DIRECTION_DOWN,
   DIRECTION_LEFT,
-} = require('./constants')
+} from './constants.js'
+
 
 /**
  * @class Game
@@ -112,7 +113,9 @@ class Game {
 
   generateRandomPixelCoord(min, max) {
     // Get a random coordinate from 0 to max container height/width
-    return Math.round(Math.random() * (max - min) + min)
+    // The division and subsequent multiplication by 2 is inteded to guarantee 
+    // rounding to the nearest even number.
+    return 2 * Math.round((Math.random() * (max - min) + min) / 2)
   }
 
   generateDot() {
@@ -196,4 +199,4 @@ class Game {
   }
 }
 
-module.exports = { Game }
+export default Game 

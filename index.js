@@ -1,7 +1,7 @@
-const { UserInterface } = require('./src/UserInterface')
-const { Game } = require('./src/Game')
+import UserInterface from './src/UserInterface.js'
+import Game from './src/Game.js'
 
-module.exports = {
+export {
   UserInterface,
   Game,
 }

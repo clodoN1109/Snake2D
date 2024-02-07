@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const { Game } = require('./src/Game')
-const { UserInterface } = require('./src/UserInterface')
+import Game from './src/Game.js'
+import UserInterface from './src/UserInterface.js'
+
 const game = new Game(new UserInterface())
 
 // Begin game

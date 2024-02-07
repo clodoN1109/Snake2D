@@ -7,11 +7,13 @@
   "bin": {
     "snek": "./play.js"
   },
+  "type": "module",
   "scripts": {
     "play": "node play.js"
   },
   "dependencies": {
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "cli-cursor": "^4.0.0"
   },
   "licence": "MIT",
   "keywords": [

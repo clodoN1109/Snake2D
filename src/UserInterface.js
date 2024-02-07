@@ -1,4 +1,5 @@
-const blessed = require('blessed')
+import blessed from 'blessed'
+import cliCursor from 'cli-cursor'
 
 /**
  * @class UserInterface
@@ -8,6 +9,9 @@ const blessed = require('blessed')
  * interface, but could be made into an abstract and extended for multiple
  * interfaces - web, terminal, etc.
  */
+
+cliCursor.hide();
+
 class UserInterface {
   constructor() {
     // Blessed is the terminal library API that provides a screen, elements, and
@@ -16,7 +20,7 @@ class UserInterface {
     this.screen = blessed.screen()
 
     // Game title
-    this.screen.title = 'Snek.js'
+    this.screen.title = 'Snek 2'
 
     // Create the boxes
     this.gameBox = this.createGameBox()
@@ -36,7 +40,7 @@ class UserInterface {
       height: '100%-1',
       style: {
         fg: 'black',
-        bg: 'black',
+        bg: 'transparent',
       },
     }
   }
@@ -51,7 +55,7 @@ class UserInterface {
       tags: true,
       style: {
         fg: 'white',
-        bg: 'blue',
+        bg: 'transparent',
       },
     }
   }
@@ -87,12 +91,14 @@ class UserInterface {
   }
 
   // Draw a pixel
+  // Width has a greater value than height in response to the rectangular ratio between vertical and 
+  // horizontal screen resolutions.
   draw(coord, color) {
     this.blessed.box({
       parent: this.gameContainer,
       top: coord.y,
       left: coord.x,
-      width: 1,
+      width: 2,
       height: 1,
       style: {
         fg: color,
@@ -129,4 +135,4 @@ class UserInterface {
   }
 }
 
-module.exports = { UserInterface }
+export default UserInterface
