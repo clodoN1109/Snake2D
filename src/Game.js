@@ -32,7 +32,7 @@ class Game {
     this.reset()
 
     // Bind handlers to UI so we can detect input change from the Game class
-    this.ui.bindHandlers(
+    this.ui.Handlers(
       this.changeDirection.bind(this),
       this.quit.bind(this),
       this.start.bind(this)

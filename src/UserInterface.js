@@ -37,9 +37,9 @@ class UserInterface {
       top: 1,
       left: 0,
       width: '100%',
-      height: '100%-1',
+      height: '100%',
       style: {
-        fg: 'black',
+        fg: 'white',
         bg: 'transparent',
       },
     }
@@ -66,16 +66,16 @@ class UserInterface {
       top: 'center',
       left: 'center',
       width: 20,
-      height: 6,
+      height: 10,
       tags: true,
       valign: 'middle',
-      content: `{center}Game Over!\n\nPress enter to try again{/center}`,
+      content: `{center}Game Over!\n\n{/center}`,
       border: {
         type: 'line',
       },
       style: {
-        fg: 'black',
-        bg: 'magenta',
+        fg: 'transparent',
+        bg: 'white',
         border: {
           fg: '#ffffff',
         },
@@ -83,7 +83,7 @@ class UserInterface {
     }
   }
 
-  bindHandlers(keyPressHandler, quitHandler, enterHandler) {
+  Handlers(keyPressHandler, quitHandler, enterHandler) {
     // Event to handle keypress i/o
     this.screen.on('keypress', keyPressHandler)
     this.screen.key(['escape', 'q', 'C-c'], quitHandler)
