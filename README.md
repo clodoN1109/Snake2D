@@ -37,7 +37,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ##
 
 <div align="center">
-  
-<img src="https://github.com/clodoN1109/SnekII/assets/104923248/2c29a1f4-71ba-4832-b9ba-05add3827cc9" width="30%" />
+
+<img src="https://github.com/clodoN1109/SnekII/assets/104923248/41e8ca85-cc88-43c1-8ee1-95f131b85195" width="30%" />
 
 </div>
