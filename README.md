@@ -1,6 +1,13 @@
-# Snek.js II -The Snake Wars 🐍🐍
-## The long-awaited follow-up to Tania Rascia's Snek.js, the ambitious terminal-based javascript implementaion of the snake game.
-[![Run on Repl.it](https://repl.it/badge/github/taniarascia/snek)](https://replit.com/@ClodomirVianna/infinite-snake)
+# Snek.js II -The Snake Wars 🐍🐍 [![Run on Repl.it](https://repl.it/badge/github/taniarascia/snek)](https://replit.com/@ClodomirVianna/infinite-snake)
+### The long-awaited follow-up to Tania Rascia's Snek.js, the ambitious terminal-based javascript implementaion of the snake game.
+
+<div align="center">
+  
+<img src="https://github.com/clodoN1109/SnekII/assets/104923248/2c29a1f4-71ba-4832-b9ba-05add3827cc9" width="50%">
+
+</div>
+
+## Trailer
 
 ## Manual
 
