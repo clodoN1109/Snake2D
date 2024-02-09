@@ -1,16 +1,14 @@
 <div align="center">
 
-# Snek.js II 
-# 🐍 The Snake Wars 🐍
+# 🐍 Snake2D.js 🐍
 
-### The long-awaited follow-up to Tania Rascia's Snek.js, the ambitious terminal-based javascript implementaion of the snake game.
+### An ambitious terminal-based javascript implementaion of the snake game, based on Tania Rascia's Snek.js.
 
 </div>
 
-
 <div align="center">
   
-<video src="https://github.com/clodoN1109/SnekII/assets/104923248/e2d98057-89d8-4b76-a990-e94163f8f282" width="50%" />
+<video src="https://github.com/clodoN1109/Snake2D/assets/104923248/526dabc9-45e8-428b-a0c6-1a584f065a4e" />
 
 </div>
 
@@ -38,6 +36,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 <div align="center">
 
-<img src="https://github.com/clodoN1109/SnekII/assets/104923248/41e8ca85-cc88-43c1-8ee1-95f131b85195" width="30%" />
+<img src="https://github.com/clodoN1109/Snake2D/assets/104923248/cee1d030-2e6d-47fb-9f99-01094fcb8150" width="30%" />
 
 </div>
