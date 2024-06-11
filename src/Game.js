@@ -8,6 +8,7 @@ import {
   DIRECTION_RIGHT,
   DIRECTION_DOWN,
   DIRECTION_LEFT,
+  WALL_COLOR,
 } from './constants.js'
 
 
@@ -35,8 +36,10 @@ class Game {
     this.ui.Handlers(
       this.changeDirection.bind(this),
       this.quit.bind(this),
-      this.start.bind(this)
+      this.start.bind(this),
+      this.drawWalls.bind(this),
     )
+
   }
 
   reset() {
@@ -44,7 +47,7 @@ class Game {
     this.snake = []
 
     for (let i = INITIAL_SNAKE_SIZE; i >= 0; i--) {
-      this.snake[INITIAL_SNAKE_SIZE - i] = { x: i, y: 0 }
+      this.snake[INITIAL_SNAKE_SIZE - i] = { x: i, y: 3 }
     }
 
     this.dot = {}
@@ -120,14 +123,39 @@ class Game {
 
   generateDot() {
     // Generate a dot at a random x/y coordinate
-    this.dot.x = this.generateRandomPixelCoord(0, this.ui.gameContainer.width - 1)
-    this.dot.y = this.generateRandomPixelCoord(1, this.ui.gameContainer.height - 1)
+    this.dot.x = this.generateRandomPixelCoord(1, this.ui.gameContainer.width - 3)
+    this.dot.y = this.generateRandomPixelCoord(1, this.ui.gameContainer.height - 4)
 
     // If the pixel is on a snake, regenerate the dot
     this.snake.forEach(segment => {
       if (segment.x === this.dot.x && segment.y === this.dot.y) {
         this.generateDot()
       }
+    })
+  }
+
+  drawWalls() {
+
+    let Walls = function Walls(x_max, y_max) {
+      
+      let walls = []
+
+      for (let y = 0; y <= 200; y++) {
+        for (let x = 0; x <= 200; x++) {
+          
+          if ((y === 0) || (x === 0) || (x === x_max-2) || (y === y_max-1)) {
+            walls.push({x:x, y:y});        
+          }  
+        
+        }
+      }
+    
+      return walls
+    
+    }(this.ui.gameContainer.width, this.ui.gameContainer.height)
+
+    Walls.forEach(brick => {
+      this.ui.draw(brick, WALL_COLOR)
     })
   }
 
@@ -154,13 +182,13 @@ class Game {
     return (
       collide ||
       // Right wall
-      this.snake[0].x >= this.ui.gameContainer.width - 1 ||
+      this.snake[0].x >= this.ui.gameContainer.width -2 ||
       // Left wall
-      this.snake[0].x <= -1 ||
+      this.snake[0].x <= 0 ||
       // Top wall
       this.snake[0].y >= this.ui.gameContainer.height - 1 ||
       // Bottom wall
-      this.snake[0].y <= -1
+      this.snake[0].y <= 0
     )
   }
 
@@ -170,6 +198,7 @@ class Game {
   }
 
   tick() {
+
     if (this.isGameOver()) {
       this.showGameOverScreen()
       clearInterval(this.timer)
@@ -178,11 +207,13 @@ class Game {
       return
     }
 
+
     this.changingDirection = false
     this.ui.clearScreen()
     this.drawDot()
     this.moveSnake()
     this.drawSnake()
+    this.drawWalls()
     this.ui.render()
   }
 

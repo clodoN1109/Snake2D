@@ -10,6 +10,7 @@ const DIRECTIONS = {
 const INITIAL_SNAKE_SIZE = 10
 const SNAKE_COLOR = 'green'
 const DOT_COLOR = 'red'
+const WALL_COLOR = 'white';
 
 const DIRECTION_UP = 'up';
 const DIRECTION_RIGHT = 'right';
@@ -26,4 +27,5 @@ export {
   DIRECTION_RIGHT,
   DIRECTION_DOWN,
   DIRECTION_LEFT,
+  WALL_COLOR
 }
