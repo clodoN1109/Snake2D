@@ -10,10 +10,10 @@ import cliCursor from 'cli-cursor'
  * interfaces - web, terminal, etc.
  */
 
-cliCursor.hide();
-
 class UserInterface {
+
   constructor() {
+
     // Blessed is the terminal library API that provides a screen, elements, and
     // event handling
     this.blessed = blessed
@@ -32,6 +32,9 @@ class UserInterface {
   }
 
   createGameBox() {
+
+    cliCursor.hide();
+
     return {
       parent: this.screen,
       top: 1,

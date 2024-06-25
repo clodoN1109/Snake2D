@@ -37,7 +37,7 @@ class Game {
       this.changeDirection.bind(this),
       this.quit.bind(this),
       this.start.bind(this),
-      this.drawWalls.bind(this),
+
     )
 
   }
